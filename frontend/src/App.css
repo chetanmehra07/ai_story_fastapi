@@ -1,150 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+/* 🎨 Root Theme */
 :root {
-  --primary-color: #4a6fa5;
-  --secondary-color: #166d89;
-  --accent-color: #48cae4;
-  --text-color: #333;
-  --background-color: #f8f9fa;
-  --card-background: #ffffff;
+  --primary-color: #ffffff;
+  --secondary-color: #cbd5ff;
+  --accent-color: #00c6ff;
+  --text-color: #ffffff;
+  --background-gradient: linear-gradient(135deg, #250f48, #6b117f);
+  --glass-bg: rgba(255, 255, 255, 0.15);
+  --glass-border: rgba(255, 255, 255, 0.2);
   --success-color: #4caf50;
-  --error-color: #f44336;
-  --border-radius: 8px;
-  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --error-color: #e5dbdb;
+  --border-radius: 16px;
+  --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
+/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* 🌌 Background */
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 1.6;
   color: var(--text-color);
-  background-color: var(--background-color);
+  background: var(--background-gradient);
+  min-height: 100vh;
 }
 
+/* Layout */
 .app-container {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
-  padding: 2rem 1rem;
+  padding: 3rem 1rem;
 }
 
+/* Header */
 header {
   text-align: center;
   margin-bottom: 2rem;
 }
 
 header h1 {
-  color: var(--primary-color);
-  margin-bottom: 0.5rem;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 600;
 }
 
-footer {
-  text-align: center;
-  margin-top: 3rem;
-  padding-top: 1rem;
-  color: #666;
-  border-top: 1px solid #eee;
-}
-
+/* Buttons */
 button {
   cursor: pointer;
-  padding: 0.5rem 1rem;
-  background-color: var(--primary-color);
+  padding: 0.7rem 1.5rem;
+  background: linear-gradient(135deg, #a71eca, #a71eca);
   color: white;
   border: none;
   border-radius: var(--border-radius);
   font-size: 1rem;
-  transition: background-color 0.3s;
+  transition: all 0.3s ease;
 }
 
 button:hover {
-  background-color: var(--secondary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(4, 0, 5, 0.458);
+}
+
+/* 🌟 Glass Cards */
+.theme-input-container,
+.loading-container,
+.story-container,
+.story-loader,
+.story-game {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  border: 1px solid var(--glass-border);
+  color: white;
 }
 
 /* Theme Input */
 .theme-input-container {
-  background-color: var(--card-background);
-  padding: 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
+  padding: 2.5rem;
   text-align: center;
 }
 
 .theme-input-container h2 {
-  color: var(--primary-color);
   margin-bottom: 1rem;
 }
 
 .theme-input-container p {
   margin-bottom: 1.5rem;
+  opacity: 0.85;
 }
 
-.input-group {
-  margin-bottom: 1.5rem;
-}
-
+/* Input */
 .input-group input {
   width: 100%;
-  padding: 0.75rem;
+  padding: 1rem;
   font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: var(--border-radius);
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  transition: 0.3s;
 }
 
-.input-group input.error {
-  border-color: var(--error-color);
+.input-group input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.input-group input:focus {
+  background: rgba(255, 255, 255, 0.3);
 }
 
 .error-text {
   color: var(--error-color);
-  font-size: 0.875rem;
+  font-size: 0.85rem;
   margin-top: 0.5rem;
   text-align: left;
 }
 
+/* Generate Button */
 .generate-btn {
-  background-color: var(--accent-color);
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: bold;
+  margin-top: 1rem;
+  font-weight: 600;
 }
 
-.generate-btn:hover {
-  background-color: var(--secondary-color);
-}
-
+/* Examples */
 .examples {
   margin-top: 2rem;
   text-align: left;
 }
 
-.examples h3 {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  color: #666;
-}
-
-.examples ul {
-  list-style-type: none;
-}
-
 .examples li {
   display: inline-block;
-  background-color: #f0f0f0;
-  padding: 0.25rem 0.5rem;
-  margin: 0.25rem;
-  border-radius: 4px;
-  font-size: 0.875rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.3rem 0.6rem;
+  margin: 0.3rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
 }
 
-/* Loading */
+/* 🔄 Loading */
 .loading-container {
-  background-color: var(--card-background);
   padding: 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
   text-align: center;
   min-height: 300px;
   display: flex;
@@ -152,19 +155,10 @@ button:hover {
   justify-content: center;
 }
 
-.loading-container h2 {
-  color: var(--primary-color);
-  margin-bottom: 1.5rem;
-}
-
-.loading-animation {
-  margin: 2rem auto;
-}
-
 .spinner {
   width: 50px;
   height: 50px;
-  border: 5px solid rgba(0, 0, 0, 0.1);
+  border: 5px solid rgba(255, 255, 255, 0.2);
   border-top-color: var(--accent-color);
   border-radius: 50%;
   margin: 0 auto;
@@ -177,108 +171,30 @@ button:hover {
   }
 }
 
-.loading-info {
-  margin-top: 1rem;
-  color: #666;
-}
-
-/* Story Container and Actions */
-.story-container {
-  background-color: var(--card-background);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  overflow: hidden;
-}
-
+/* 📖 Story Actions */
 .story-actions {
   display: flex;
   gap: 1rem;
-  padding: 1rem 2rem;
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #e9ecef;
+  padding: 1rem;
   justify-content: flex-end;
-}
-
-.share-btn,
-.view-btn {
-  background-color: var(--accent-color);
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: var(--border-radius);
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.share-btn:hover,
-.view-btn:hover {
-  background-color: var(--secondary-color);
-}
-
-/* Story Loader */
-.story-loader {
-  background-color: var(--card-background);
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-  overflow: hidden;
-}
-
-.story-nav {
-  padding: 1rem 2rem;
-  background-color: #f8f9fa;
-  border-bottom: 1px solid #e9ecef;
-}
-
-.home-btn {
-  background-color: #6c757d;
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: var(--border-radius);
-  font-size: 0.9rem;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.home-btn:hover {
-  background-color: #5a6268;
 }
 
 /* Story Game */
 .story-game {
-  background-color: var(--card-background);
   padding: 2rem;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
 }
 
 .story-header {
   text-align: center;
   margin-bottom: 1.5rem;
-  padding-bottom: 1rem;
-  border-bottom: 1px solid #eee;
-}
-
-.story-header h2 {
-  color: var(--primary-color);
-}
-
-.story-content {
-  margin-bottom: 2rem;
 }
 
 .story-node p {
   font-size: 1.1rem;
-  line-height: 1.7;
   margin-bottom: 1.5rem;
 }
 
-.story-options h3 {
-  margin-bottom: 1rem;
-  color: var(--secondary-color);
-}
-
+/* Options */
 .options-list {
   display: flex;
   flex-direction: column;
@@ -288,88 +204,81 @@ button:hover {
 .option-btn {
   text-align: left;
   padding: 1rem;
-  background-color: #f0f7ff;
-  color: var(--text-color);
-  border: 1px solid #d0e0f7;
-  transition: all 0.3s;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
 }
 
 .option-btn:hover {
-  background-color: #e0f0ff;
-  transform: translateY(-2px);
+  background: rgba(255, 255, 255, 0.25);
 }
 
+/* Ending */
 .story-ending {
   text-align: center;
   margin-top: 2rem;
 }
 
-.story-ending h3 {
-  color: var(--primary-color);
-  margin-bottom: 1rem;
-}
-
-.restart-btn {
-  background-color: var(--accent-color);
-  padding: 0.75rem 1.5rem;
-}
-
-.restart-btn:hover {
-  background-color: var(--secondary-color);
-}
-
-.winning-message {
-  color: var(--success-color);
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-}
-
-.ending-message {
-  color: #666;
-  margin-bottom: 1.5rem;
-}
-
-.new-story-btn {
-  background-color: var(--accent-color);
-  padding: 0.75rem 1.5rem;
-}
-
+/* 🔥 FIX: BUTTON ALIGNMENT */
 .story-controls {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   gap: 1rem;
-  margin-top: 2rem;
-  padding-top: 1rem;
-  border-top: 1px solid #eee;
+  margin-top: 1.5rem;
 }
 
-.reset-btn {
-  background-color: #f0f0f0;
-  color: #666;
+.story-controls button {
+  flex: 1;
 }
 
-.reset-btn:hover {
-  background-color: #e0e0e0;
-}
-
-/* Error Message */
+/* Error */
 .error-message {
-  background-color: #ffebee;
-  color: var(--error-color);
+  background: rgba(234, 231, 231, 0.356);
+  color: white;
   padding: 1.5rem;
   border-radius: var(--border-radius);
   text-align: center;
-  margin-bottom: 2rem;
 }
-
 .error-message p {
   margin-bottom: 1rem;
 }
-
 .error-message button {
-  background-color: var(--error-color);
+  background: #9d83a1;
+}
+/* 🔵 Loading dots container */
+.wave {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 20px 0;
 }
 
-.error-message button:hover {
-  background-color: #d32f2f;
+.wave span {
+  width: 6px;
+  height: 20px;
+  background: #c509ac;
+  animation: wave 1s infinite ease-in-out;
+}
+
+.wave span:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.wave span:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.wave span:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.wave span:nth-child(5) {
+  animation-delay: 0.4s;
+}
+
+@keyframes wave {
+  0%,
+  100% {
+    transform: scaleY(0.5);
+  }
+  50% {
+    transform: scaleY(1.5);
+  }
 }

@@ -9,8 +9,7 @@ function StoryGame({ story, onNewStory }) {
 
   useEffect(() => {
     if (story && story.root_node) {
-      const rootNodeId = story.root_node.id;
-      setCurrentNodeId(rootNodeId);
+      setCurrentNodeId(story.root_node.id);
     }
   }, [story]);
 
@@ -22,7 +21,7 @@ function StoryGame({ story, onNewStory }) {
       setIsEnding(node.is_ending);
       setIsWinningEnding(node.is_winning_endig);
 
-      if (!node.is_ending && node.options && node.options.length > 0) {
+      if (!node.is_ending && node.options?.length > 0) {
         setOptions(node.options);
       } else {
         setOptions([]);
@@ -35,7 +34,7 @@ function StoryGame({ story, onNewStory }) {
   };
 
   const restartStory = () => {
-    if (story && story.root_node) {
+    if (story?.root_node) {
       setCurrentNodeId(story.root_node.id);
     }
   };
@@ -54,42 +53,43 @@ function StoryGame({ story, onNewStory }) {
             {isEnding ? (
               <div className="story-ending">
                 <h3>{isWinningEnding ? "Congratulations" : "The End"}</h3>
-                {isWinningEnding
-                  ? "You reached a winning ending"
-                  : "Your adventure has ended."}
+                <p>
+                  {isWinningEnding
+                    ? "You reached a winning ending"
+                    : "Your adventure has ended."}
+                </p>
               </div>
             ) : (
               <div className="story-options">
                 <h3>What will you do?</h3>
                 <div className="options-list">
-                  {options.map((option, index) => {
-                    return (
-                      <button
-                        key={index}
-                        onClick={() => chooseOption(option.node_id)}
-                        className="option-btn"
-                      >
-                        {option.text}
-                      </button>
-                    );
-                  })}
+                  {options.map((option, index) => (
+                    <button
+                      key={index}
+                      onClick={() => chooseOption(option.node_id)}
+                      className="option-btn"
+                    >
+                      {option.text}
+                    </button>
+                  ))}
                 </div>
               </div>
             )}
           </div>
         )}
 
+        {/* 🔥 FIX: BOTH BUTTONS IN SAME CONTAINER */}
         <div className="story-controls">
-          <button onClick={restartStory} className="reset-btn">
+          <button onClick={restartStory} className="restart-btn">
             Restart Story
           </button>
-        </div>
 
-        {onNewStory && (
-          <button onClick={onNewStory} className="new-story-btn">
-            New Story
-          </button>
-        )}
+          {onNewStory && (
+            <button onClick={onNewStory} className="new-story-btn">
+              New Story
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );
