@@ -1,6 +1,6 @@
 # AI Story Generator (Choose Your Own Story)
 
-An AI-powered interactive storytelling web application that generates dynamic "choose your own story" narratives in real-time using Google Gemini. Users influence the storyline through their choices, creating a unique and personalized experience every time. Built with FastAPI, React, and modern AI orchestration tools.
+An AI-powered interactive storytelling web application that generates dynamic “choose your own story” narratives in real-time using Google Gemini. The experience unfolds across multiple steps (4–5 levels), where users make decisions at each stage, dynamically shaping the story into different paths and outcomes. Built with FastAPI, React, and modern AI orchestration tools.
 
 ---
 
