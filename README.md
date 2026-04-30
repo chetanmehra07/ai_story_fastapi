@@ -1,17 +1,15 @@
-# 🧠 AI Story Generator (Choose Your Own Adventure)
+# AI Story Generator (Choose Your Own Story)
 
-An interactive AI-powered storytelling web app where users can play dynamic "choose your own adventure" stories generated in real-time using Google Gemini.
+An AI-powered interactive storytelling web application that generates dynamic "choose your own story" narratives in real-time using Google Gemini. Users influence the storyline through their choices, creating a unique and personalized experience every time. Built with FastAPI, React, and modern AI orchestration tools.
 
 ---
 
 ## ✨ Features
 
-- 🎮 Interactive story gameplay (user choices affect story flow)
-- 🤖 AI-generated story content using Gemini API
-- ⚡ FastAPI backend for efficient processing
-- 🌐 React frontend with smooth UI/UX
-- 🧩 Modular architecture (easy to extend)
-- 💾 Story state management
+-  Interactive story gameplay (user choices affect story flow)
+-  AI-generated story content using Gemini API
+-  FastAPI backend for efficient processing
+-  React frontend with smooth UI/UX
 
 ---
 
@@ -19,7 +17,6 @@ An interactive AI-powered storytelling web app where users can play dynamic "cho
 
 ### Frontend
 - React.js
-- Axios
 - React Router
 
 ### Backend
@@ -34,3 +31,24 @@ An interactive AI-powered storytelling web app where users can play dynamic "cho
 - Google Gemini API
 
 ---
+## Output Snapshots
+
+
+<table width="100%">
+  <tr>
+    <td width="50%" align="center">
+      <img src="./screenshots/Screenshot 2026-04-30 135456.png" alt="Home Page" />
+    </td>
+    <td width="50%" align="center">
+      <img src="./screenshots/Screenshot 2026-04-30 135512.png" alt="Products Page" />
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center">
+      <img src="./screenshots/Screenshot 2026-04-30 135554.png" alt="Cheackout Page" />
+    </td>
+    <td width="50%" align="center">
+      <img src="./screenshots/Screenshot 2026-04-30 135754.png" alt="History Page" />
+    </td>
+  </tr>
+</table>
